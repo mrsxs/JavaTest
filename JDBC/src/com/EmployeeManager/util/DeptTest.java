@@ -7,9 +7,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DeptTest {
-    
+
     /**
      * 员工管理系统主程序
+     *
      * @param args 程序参数
      */
     public static void start(String[] args) {
@@ -186,6 +187,7 @@ public class DeptTest {
 
     /**
      * 打印表头信息
+     *
      * @return 用户选择的操作编号
      */
     public static int printHeader() {
@@ -200,17 +202,16 @@ public class DeptTest {
         System.out.println("6,退出系统");
         Scanner sc = new Scanner(System.in);
         int i = sc.nextInt();
-        return i;
-    }
-}
+
+
         System.out.println("4,查询所有部门信息");
         System.out.println("5根据id查询部门信息");
         System.out.println("6,退出");
         System.out.println("请选择你要执行的功能");
-        Scanner sc = new Scanner(System.in);
-        if (sc.hasNextInt() == false) {
+        Scanner sc1 = new Scanner(System.in);
+        if (sc1.hasNextInt() == false) {
             System.out.println("输入的不是整数 重新输入");
-            return;
+            return 0;
         }
         int choice = sc.nextInt();
         return choice;
