@@ -11,7 +11,9 @@ import java.util.Scanner;
 public class EmployeeManagerTest {
     
     /**
+     *
      * 主方法，用于选择需要操作的表。
+     *
      * @param args 命令行参数
      */
     public static void main(String[] args) {
