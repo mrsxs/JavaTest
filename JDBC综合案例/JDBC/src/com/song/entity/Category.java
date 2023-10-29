@@ -1,6 +1,12 @@
 package com.song.entity;
 
 public class Category {
+    /**
+     * 类别信息数据表
+     *
+     * @param CategoryId 类别编号
+     * @param CategoryName 类别名称
+     */
     private int CategoryId;
     private String CategoryName;
 
