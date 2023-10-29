@@ -38,4 +38,8 @@ public interface OffersDao {
          * 查询所有供货商
          */
         public List<Offers> queryAllOffers();
+        /**
+         * 根据id查询供货商
+         */
+        public Offers queryOffersById(int OfferID);
 }

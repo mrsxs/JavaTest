@@ -3,6 +3,7 @@ package com.song.Test;
 import java.util.Scanner;
 
 import static com.song.util.CategoryFunction.CategoryStart;
+import static com.song.util.GoodsFunction.GoodsStart;
 import static com.song.util.OffersFunction.OffersStart;
 
 public class ShopdbTest {
@@ -31,6 +32,7 @@ public class ShopdbTest {
                 //职员数据表
             case 3:
                 //商品信息表
+                GoodsStart();
             case 4:
                 //供货商信息数据表
                 OffersStart();

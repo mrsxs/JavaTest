@@ -162,5 +162,30 @@ public class OffersDaoimpl extends BaseDao implements OffersDao {
         return list;
     }
 
+    /**
+     * 根据id查询供货商
+     * @param offerID
+     * @return
+     */
 
+    public Offers queryOffersById(int offerID) {
+        Offers offers = null;
+        try {
+            super.getConnection();
+            String sql = "select * from Offers where OfferID = ?";
+            Object[] params = {offerID};
+            ResultSet resultSet = super.executeQuery(sql, params);
+            if (resultSet.next()) {
+                offers = new Offers();
+                offers.setOfferID(resultSet.getInt("OfferID"));
+                offers.setOfferName(resultSet.getString("OfferName"));
+                offers.setLegalIP(resultSet.getString("LegalIP"));
+                offers.setAddress(resultSet.getString("Address"));
+                offers.setTel(resultSet.getString("Tel"));
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return offers;
+    }
 }

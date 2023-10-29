@@ -36,4 +36,8 @@ public interface CategoryDao {
          * 判断有没有这个id
          */
         public boolean isExist(int categoryId);
+        /**
+         * 根据id查询分类
+         */
+        public Category queryCategoryById(int categoryId);
 }

@@ -1,15 +1,20 @@
-package com.song.dao.impl;
+package com.song.dao;
+
+import com.song.entity.Goods;
+
+import java.util.List;
 
 public interface GoodsDao {
     // 添加商品
-    public void addGoods();
+    public int addGoods(Goods goods);
     // 删除商品
-    public void deleteGoods();
+    public int deleteGoods(int id);
     // 修改商品
-    public void updateGoods();
+    public int updateGoods(Goods goods);
     // 查询商品
-    public void selectGoods();
+    public List<Goods> selectGoods();
     //多条件查询商品
-    public void selectGoodsByCondition();
-
+    public List<Goods> CompoundQuery(Goods goods);
+    // 根据判断id是否存在
+    public boolean isExist(int id);
 }

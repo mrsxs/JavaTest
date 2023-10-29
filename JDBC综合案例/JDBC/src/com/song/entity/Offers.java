@@ -19,6 +19,15 @@ public class Offers {
     public Offers() {
     }
 
+    /**
+     * 构造方法
+     * @param OfferID
+     * @param OfferName
+     * @param LegalIP
+     * @param Address
+     * @param Tel
+     */
+
     public Offers(int OfferID, String OfferName, String LegalIP, String Address, String Tel) {
         this.OfferID = OfferID;
         this.OfferName = OfferName;
@@ -27,6 +36,13 @@ public class Offers {
         this.Tel = Tel;
     }
 
+    /**
+     * 构造方法
+     * @param OfferName
+     * @param LegalIP
+     * @param Address
+     * @param Tel
+     */
     public Offers(String OfferName, String LegalIP, String Address, String Tel) {
         this.OfferName = OfferName;
         this.LegalIP = LegalIP;

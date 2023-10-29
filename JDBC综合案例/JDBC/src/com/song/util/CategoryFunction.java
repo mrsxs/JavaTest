@@ -1,5 +1,6 @@
 package com.song.util;
 
+import com.song.Test.ShopdbTest;
 import com.song.dao.impl.CategoryDaoimpl;
 import com.song.entity.Category;
 
@@ -40,7 +41,7 @@ public class CategoryFunction {
                 case 5:
                     //退出
                     System.out.println("退出成功");
-                    return;
+                    ShopdbTest.printMenu();
                 default:
                     System.out.println("输入的数字不在范围内 请重新输入");
 
