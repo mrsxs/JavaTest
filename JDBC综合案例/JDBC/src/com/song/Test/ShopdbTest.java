@@ -1,8 +1,9 @@
 package com.song.Test;
 
-import com.song.util.CategoryFunction;
-
 import java.util.Scanner;
+
+import static com.song.util.CategoryFunction.CategoryStart;
+import static com.song.util.OffersFunction.OffersStart;
 
 public class ShopdbTest {
     public static void main(String[] args) {
@@ -25,14 +26,14 @@ public class ShopdbTest {
         switch (i) {
             case 1:
                 //类别表
-                CategoryFunction categoryFunction = new CategoryFunction();
-                categoryFunction.start();
+                CategoryStart();
             case 2:
                 //职员数据表
             case 3:
                 //商品信息表
             case 4:
                 //供货商信息数据表
+                OffersStart();
             case 5:
                 //销售信息表
             default:

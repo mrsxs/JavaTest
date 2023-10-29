@@ -10,7 +10,7 @@ public class Offers {
      * Address 地址
      * Tel 电话
      */
-    private String OfferID;
+    private int OfferID;
     private String OfferName;
     private String LegalIP;
     private String Address;
@@ -19,8 +19,15 @@ public class Offers {
     public Offers() {
     }
 
-    public Offers(String OfferID, String OfferName, String LegalIP, String Address, String Tel) {
+    public Offers(int OfferID, String OfferName, String LegalIP, String Address, String Tel) {
         this.OfferID = OfferID;
+        this.OfferName = OfferName;
+        this.LegalIP = LegalIP;
+        this.Address = Address;
+        this.Tel = Tel;
+    }
+
+    public Offers(String OfferName, String LegalIP, String Address, String Tel) {
         this.OfferName = OfferName;
         this.LegalIP = LegalIP;
         this.Address = Address;
@@ -29,22 +36,25 @@ public class Offers {
 
     /**
      * 获取
+     *
      * @return OfferID
      */
-    public String getOfferID() {
+    public int getOfferID() {
         return OfferID;
     }
 
     /**
      * 设置
+     *
      * @param OfferID
      */
-    public void setOfferID(String OfferID) {
+    public void setOfferID(int OfferID) {
         this.OfferID = OfferID;
     }
 
     /**
      * 获取
+     *
      * @return OfferName
      */
     public String getOfferName() {
@@ -53,6 +63,7 @@ public class Offers {
 
     /**
      * 设置
+     *
      * @param OfferName
      */
     public void setOfferName(String OfferName) {
@@ -61,6 +72,7 @@ public class Offers {
 
     /**
      * 获取
+     *
      * @return LegalIP
      */
     public String getLegalIP() {
@@ -69,6 +81,7 @@ public class Offers {
 
     /**
      * 设置
+     *
      * @param LegalIP
      */
     public void setLegalIP(String LegalIP) {
@@ -77,6 +90,7 @@ public class Offers {
 
     /**
      * 获取
+     *
      * @return Address
      */
     public String getAddress() {
@@ -85,6 +99,7 @@ public class Offers {
 
     /**
      * 设置
+     *
      * @param Address
      */
     public void setAddress(String Address) {
@@ -93,6 +108,7 @@ public class Offers {
 
     /**
      * 获取
+     *
      * @return Tel
      */
     public String getTel() {
@@ -101,6 +117,7 @@ public class Offers {
 
     /**
      * 设置
+     *
      * @param Tel
      */
     public void setTel(String Tel) {

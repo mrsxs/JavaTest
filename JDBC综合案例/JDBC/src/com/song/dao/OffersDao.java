@@ -21,9 +21,21 @@ public interface OffersDao {
         * 修改供货商
         */
         public int updateOffers(Offers offers);
+        /**
+         * 查询所有供货商
+         */
 
         /**
          * 多条件查询
          */
-        public List<Offers> queryOffers();
+        public List<Offers> queryOffers(Offers offers);
+
+        /**
+         * 判断id是否存在
+         */
+        public boolean isExist(int OfferID);
+        /**
+         * 查询所有供货商
+         */
+        public List<Offers> queryAllOffers();
 }
