@@ -12,7 +12,7 @@ public class CategoryFunction {
     /**
      * 启动方法
      */
-    public static void CategoryStart( ) {
+    public static void CategoryStart() {
 
         while (true) {
             System.out.println("请选择对类别数据表的操作：1添加 2修改 3删除 4多条件查询 5退出");

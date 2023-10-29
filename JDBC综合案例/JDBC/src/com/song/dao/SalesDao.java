@@ -1,10 +1,13 @@
 package com.song.dao;
 
+import com.song.entity.Sales;
+
 import java.util.List;
 
-public interface Sales {
+public interface SalesDao {
     /**
      * 添加销售记录
+     *
      * @param sales
      * @return
      */
@@ -12,6 +15,7 @@ public interface Sales {
 
     /**
      * 删除销售记录
+     *
      * @param id
      * @return
      */
@@ -19,18 +23,26 @@ public interface Sales {
 
     /**
      * 修改销售记录
+     *
      * @param sales
      * @return
      */
     public int updateSales(Sales sales);
+
     /**
      * 多条件查询
+     *
      * @return
      */
-     public List<Sales> CompoundQuery(Sales sales);
+    public List<Sales> CompoundQuery(int minSellAmount, int maxSellAmount, String GoodName, String EmpName, String minSellDate, String maxSellDate);
+
+    /**
+     * 查询所有
+     */
+    public List<Sales> selectSales();
+
     /**
      * 判断id是否存在
-     *
      */
     public boolean isExist(int id);
 }

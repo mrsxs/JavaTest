@@ -67,7 +67,7 @@ public class CategoryDaoimpl extends BaseDao implements CategoryDao {
      * 查询所有分类
      */
     public List<Category> queryCategory() {
-        List<Category> list =new ArrayList<>();
+        List<Category> list = new ArrayList<>();
         try {
             super.getConnection();
             String sql = "select * from Category";
@@ -129,6 +129,7 @@ public class CategoryDaoimpl extends BaseDao implements CategoryDao {
 
     /**
      * 根据id查询分类
+     *
      * @param categoryId
      * @return
      */

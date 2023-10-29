@@ -1,7 +1,6 @@
 package com.song.util;
 
 import com.song.Test.ShopdbTest;
-import com.song.dao.OffersDao;
 import com.song.dao.impl.OffersDaoimpl;
 import com.song.entity.Offers;
 
@@ -15,16 +14,16 @@ public class OffersFunction {
      */
     public static void OffersStart() {
         while (true) {
-        System.out.println("***************供货商信息管理系统***************");
-        System.out.println("1.添加供货商信息");
-        System.out.println("2.删除供货商信息");
-        System.out.println("3.修改供货商信息");
-        System.out.println("4.多条件查询供货商信息");
-        System.out.println("5.退出系统");
-        System.out.println("**********************************************");
-        System.out.println("请输入你的选择：");
-        Scanner sc = new Scanner(System.in);
-        int i = sc.nextInt();
+            System.out.println("***************供货商信息管理系统***************");
+            System.out.println("1.添加供货商信息");
+            System.out.println("2.删除供货商信息");
+            System.out.println("3.修改供货商信息");
+            System.out.println("4.多条件查询供货商信息");
+            System.out.println("5.退出系统");
+            System.out.println("**********************************************");
+            System.out.println("请输入你的选择：");
+            Scanner sc = new Scanner(System.in);
+            int i = sc.nextInt();
 
             switch (i) {
                 case 1:
@@ -68,13 +67,13 @@ public class OffersFunction {
         String s = sc.next();
         if (s.equals("y")) {
             System.out.println("请输入要查询的供货商名称 可以模糊查询");
-             OfferName = sc.next();
+            OfferName = sc.next();
         }
         System.out.println("是否根据法人代表进行多条件查询？y/n");
         String s1 = sc.next();
         if (s1.equals("y")) {
             System.out.println("请输入要查询的法人代表");
-             LegalIP = sc.next();
+            LegalIP = sc.next();
         }
         System.out.println("是否根据地址进行多条件查询？y/n");
         String s2 = sc.next();
@@ -86,7 +85,7 @@ public class OffersFunction {
         String s3 = sc.next();
         if (s3.equals("y")) {
             System.out.println("请输入要查询的电话");
-           Tel = sc.next();
+            Tel = sc.next();
         }
         Offers offers = new Offers(OfferName, LegalIP, Address, Tel);
         List<Offers> list = offersDaoimpl.queryOffers(offers);
@@ -111,7 +110,7 @@ public class OffersFunction {
 
     private static void updateOffers() {
         queryAllOffers();
-      OffersDaoimpl offersDaoimpl = new OffersDaoimpl();
+        OffersDaoimpl offersDaoimpl = new OffersDaoimpl();
         System.out.println("请输入要修改的供货商编号：");
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextInt() == false) {

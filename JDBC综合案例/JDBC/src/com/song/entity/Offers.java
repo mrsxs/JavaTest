@@ -21,6 +21,7 @@ public class Offers {
 
     /**
      * 构造方法
+     *
      * @param OfferID
      * @param OfferName
      * @param LegalIP
@@ -38,6 +39,7 @@ public class Offers {
 
     /**
      * 构造方法
+     *
      * @param OfferName
      * @param LegalIP
      * @param Address

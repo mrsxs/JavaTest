@@ -14,6 +14,7 @@ public class Goods {
 
     /**
      * 有参构造函数
+     *
      * @param goodsId
      * @param goodsName
      * @param price
@@ -30,7 +31,6 @@ public class Goods {
         this.offers = offers;
         this.stockes = stockes;
     }
-
 
 
     public int getGoodsId() {

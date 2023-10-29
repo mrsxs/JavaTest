@@ -16,6 +16,7 @@ public class GoodsDaoimpl extends BaseDao implements GoodsDao {
 
     /**
      * 添加商品
+     *
      * @param goods
      * @return
      */
@@ -35,6 +36,7 @@ public class GoodsDaoimpl extends BaseDao implements GoodsDao {
 
     /**
      * 删除商品
+     *
      * @param id
      * @return
      */
@@ -44,7 +46,7 @@ public class GoodsDaoimpl extends BaseDao implements GoodsDao {
 
         try {
             super.getConnection();
-            String sql= "delete from Goods where GoodId = ?";
+            String sql = "delete from Goods where GoodId = ?";
             Object prams[] = {id};
             count = super.executeUpdate(sql, prams);
         } catch (Exception e) {
@@ -57,6 +59,7 @@ public class GoodsDaoimpl extends BaseDao implements GoodsDao {
 
     /**
      * 修改商品
+     *
      * @param goods
      * @return
      */
@@ -97,24 +100,26 @@ public class GoodsDaoimpl extends BaseDao implements GoodsDao {
 
     /**
      * 查询商品
+     *
      * @return
      */
     @Override
     public List<Goods> selectGoods() {
-       List list = new ArrayList<>();
-         try {
-              super.getConnection();
-              String sql = "select * from Goods";
-              next(list, sql);
+        List list = new ArrayList<>();
+        try {
+            super.getConnection();
+            String sql = "select * from Goods";
+            next(list, sql);
 
-         } catch (Exception e) {
-              throw new RuntimeException(e);
-         }
-         return list;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return list;
     }
 
     /**
      * 多条件查询商品
+     *
      * @param goods
      * @return
      */
@@ -130,10 +135,10 @@ public class GoodsDaoimpl extends BaseDao implements GoodsDao {
             if (goods.getPrice() != 0) {
                 sql += " and Price = " + goods.getPrice();
             }
-            if (goods.getCategory() !=null && goods.getCategory().getCategoryId() != 0) {
+            if (goods.getCategory() != null && goods.getCategory().getCategoryId() != 0) {
                 sql += " and CategoryId = " + goods.getCategory().getCategoryId();
             }
-            if (goods.getOffers() !=null&&goods.getOffers().getOfferID() != 0) {
+            if (goods.getOffers() != null && goods.getOffers().getOfferID() != 0) {
                 sql += " and OfferID = " + goods.getOffers().getOfferID();
             }
             next(list, sql);
@@ -144,7 +149,8 @@ public class GoodsDaoimpl extends BaseDao implements GoodsDao {
     }
 
     /**
-     * 根据id查询商品
+     * 判断商品是否存在
+     *
      * @param id
      * @return
      */
@@ -165,8 +171,38 @@ public class GoodsDaoimpl extends BaseDao implements GoodsDao {
         return flag;
     }
 
+
+    /**
+     * 根据id查询商品
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Goods queryGoodsById(int id) {
+        Goods goods = new Goods();
+        try {
+            super.getConnection();
+            String sql = "select * from Goods where GoodId = ?";
+            Object[] params = {id};
+            ResultSet resultSet = super.executeQuery(sql, params);
+            if (resultSet.next()) {
+                goods.setGoodsId(resultSet.getInt("GoodId"));
+                goods.setGoodsName(resultSet.getString("GoodName"));
+                goods.setPrice(resultSet.getDouble("Price"));
+                goods.setStockes(resultSet.getInt("Stockes"));
+                goods.setCategory(new CategoryDaoimpl().queryCategoryById(resultSet.getInt("CategoryId")));
+                goods.setOffers(new OffersDaoimpl().queryOffersById(resultSet.getInt("OfferID")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return goods;
+    }
+
     /**
      * 封装查询结果
+     *
      * @param list
      * @param sql
      * @throws SQLException

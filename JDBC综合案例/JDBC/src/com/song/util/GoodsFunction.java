@@ -12,9 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class GoodsFunction {
-    public static void main(String[] args) {
-        GoodsStart();
-    }
+
 
     /**
      * 商品管理
@@ -42,7 +40,7 @@ public class GoodsFunction {
                     break;
                 case 3:
                     //删除商品信息
-                  deleteGoods();
+                    deleteGoods();
                     break;
                 case 4:
                     //多条件查询
@@ -194,38 +192,38 @@ public class GoodsFunction {
                 return;
             }
         }
-            System.out.println("是否修改供货商 y/n");
-            String s3 = sc.next();
-            if (s3.equalsIgnoreCase("y")) {
-                System.out.println("请输入新的供货商id");
-                queryOffers();
-                offerId = sc.nextInt();
-                //判断有没有这个id
-                boolean exist1 = goodsDaoimpl.isExist(offerId);
-                if (!exist1) {
-                    System.out.println("输入的供货商id不存在");
-                    return;
-                }
+        System.out.println("是否修改供货商 y/n");
+        String s3 = sc.next();
+        if (s3.equalsIgnoreCase("y")) {
+            System.out.println("请输入新的供货商id");
+            queryOffers();
+            offerId = sc.nextInt();
+            //判断有没有这个id
+            boolean exist1 = goodsDaoimpl.isExist(offerId);
+            if (!exist1) {
+                System.out.println("输入的供货商id不存在");
+                return;
             }
-                System.out.println("是否修改商品库存 y/n");
-                String s4 = sc.next();
-                if (s4.equalsIgnoreCase("y")) {
-                    System.out.println("请输入新的商品库存");
-                    stockes = sc.nextInt();
-                }
-                Goods goods = new Goods();
-                goods.setGoodsId(goodsId);
-                goods.setGoodsName(goodsName);
-                goods.setPrice(price);
-                goods.setCategory(categoryDaoimpl.queryCategoryById(categoryId));
-                goods.setOffers(new OffersDaoimpl().queryOffersById(offerId));
-                goods.setStockes(stockes);
-                int count = goodsDaoimpl.updateGoods(goods);
-                if (count > 0) {
-                    System.out.println("修改成功");
-                } else {
-                    System.out.println("修改失败");
-                }
+        }
+        System.out.println("是否修改商品库存 y/n");
+        String s4 = sc.next();
+        if (s4.equalsIgnoreCase("y")) {
+            System.out.println("请输入新的商品库存");
+            stockes = sc.nextInt();
+        }
+        Goods goods = new Goods();
+        goods.setGoodsId(goodsId);
+        goods.setGoodsName(goodsName);
+        goods.setPrice(price);
+        goods.setCategory(categoryDaoimpl.queryCategoryById(categoryId));
+        goods.setOffers(new OffersDaoimpl().queryOffersById(offerId));
+        goods.setStockes(stockes);
+        int count = goodsDaoimpl.updateGoods(goods);
+        if (count > 0) {
+            System.out.println("修改成功");
+        } else {
+            System.out.println("修改失败");
+        }
 
 
     }
@@ -296,7 +294,7 @@ public class GoodsFunction {
     /**
      * 查询所有商品
      */
-    private static void queryGoods() {
+    static void queryGoods() {
         GoodsDaoimpl goodsDaoimpl = new GoodsDaoimpl();
         List<Goods> goods = goodsDaoimpl.selectGoods();
         //打印商品信息
@@ -310,7 +308,7 @@ public class GoodsFunction {
     /**
      * 查询所有供货商
      */
-    private static void queryOffers() {
+    static void queryOffers() {
         OffersDaoimpl offersDaoimpl = new OffersDaoimpl();
         List<Offers> offers = offersDaoimpl.queryAllOffers();
         System.out.println("供货商编号\t供货商名称\t供货商地址\t供货商电话");
