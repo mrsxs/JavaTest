@@ -1,26 +1,28 @@
 package com.song.dao;
 
-public interface EmployeeDao {
+import com.song.entity.Employee;
+
+public interface Employeeid {
+    /**
+     * 添加职员信息
+     */
+    public int addEmployee(Employee employee);
 
     /**
-     * 添加员工
+     * 删除职员信息
      */
-    public void addEmployee();
-
+    public int deleteEmployee(int id);
     /**
-     * 删除员工
+     * 修改职员信息
      */
-
-    public void deleteEmployee();
-
+    public int updateEmployee(Employee employee);
     /**
-     * 修改员工
+     * 多条件查询
      */
-    public void updateEmployee();
-
+    public int CompoundQuery(Employee employee);
     /**
-     * 查询所有员工
+     * 查询所有
      */
-    public void queryEmployee();
+    public int selectEmployee();
 
 }
