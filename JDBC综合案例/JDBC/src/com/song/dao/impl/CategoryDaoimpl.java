@@ -67,11 +67,11 @@ public class CategoryDaoimpl extends BaseDao implements CategoryDao {
      * 查询所有分类
      */
     public List<Category> queryCategory() {
-        List<Category> list =new ArrayList<>();
+        List<Category> list = new ArrayList<>();
         try {
             super.getConnection();
             String sql = "select * from Category";
-            ResultSet resultSet = super.executeQuery(sql, Category.class);
+            ResultSet resultSet = super.executeQuery(sql);
             while (resultSet.next()) {
                 Category category = new Category();
                 category.setCategoryId(resultSet.getInt("categoryId"));
@@ -80,6 +80,8 @@ public class CategoryDaoimpl extends BaseDao implements CategoryDao {
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return list;
     }
@@ -103,6 +105,8 @@ public class CategoryDaoimpl extends BaseDao implements CategoryDao {
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return list;
     }
@@ -123,7 +127,35 @@ public class CategoryDaoimpl extends BaseDao implements CategoryDao {
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return flag;
+    }
+
+    /**
+     * 根据id查询分类
+     *
+     * @param categoryId
+     * @return
+     */
+    public Category queryCategoryById(int categoryId) {
+        Category category = null;
+        try {
+            super.getConnection();
+            String sql = "select * from Category where categoryId = ?";
+            Object[] params = {categoryId};
+            ResultSet resultSet = super.executeQuery(sql, params);
+            if (resultSet.next()) {
+                category = new Category();
+                category.setCategoryId(resultSet.getInt("categoryId"));
+                category.setCategoryName(resultSet.getString("categoryName"));
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }finally {
+            super.connClose();
+        }
+        return category;
     }
 }

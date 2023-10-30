@@ -1,9 +1,14 @@
 package com.song.entity;
 
 public class Category {
+    /**
+     * 类别信息数据表
+     *
+     * @param CategoryId 类别编号
+     * @param CategoryName 类别名称
+     */
     private int CategoryId;
     private String CategoryName;
-
 
 
     /**
@@ -11,8 +16,10 @@ public class Category {
      */
     public Category() {
     }
+
     /**
      * 有参构造方法
+     *
      * @param categoryId
      * @param categoryName
      */
@@ -20,29 +27,37 @@ public class Category {
         CategoryId = categoryId;
         CategoryName = categoryName;
     }
+
     /**
      * get set 方法
+     *
      * @return
      */
     public int getCategoryId() {
         return CategoryId;
     }
+
     /**
      * get set 方法
+     *
      * @param categoryId
      */
     public void setCategoryId(int categoryId) {
         CategoryId = categoryId;
     }
+
     /**
      * get set 方法
+     *
      * @return
      */
     public String getCategoryName() {
         return CategoryName;
     }
+
     /**
      * get set 方法
+     *
      * @param categoryName
      */
     public void setCategoryName(String categoryName) {
@@ -50,10 +65,4 @@ public class Category {
     }
 
 
-
-
- 
-
-
-    
 }

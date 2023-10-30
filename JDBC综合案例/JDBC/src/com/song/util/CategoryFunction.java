@@ -1,5 +1,6 @@
 package com.song.util;
 
+import com.song.Test.ShopdbTest;
 import com.song.dao.impl.CategoryDaoimpl;
 import com.song.entity.Category;
 
@@ -11,7 +12,7 @@ public class CategoryFunction {
     /**
      * 启动方法
      */
-    public  void start( ) {
+    public static void CategoryStart() {
 
         while (true) {
             System.out.println("请选择对类别数据表的操作：1添加 2修改 3删除 4多条件查询 5退出");
@@ -40,7 +41,7 @@ public class CategoryFunction {
                 case 5:
                     //退出
                     System.out.println("退出成功");
-                    return;
+                    ShopdbTest.printMenu();
                 default:
                     System.out.println("输入的数字不在范围内 请重新输入");
 
@@ -51,7 +52,7 @@ public class CategoryFunction {
     /**
      * 多条件查询
      */
-    private void queryCategory() {
+    private static void queryCategory() {
         CategoryDaoimpl categoryDaoimpl = new CategoryDaoimpl();
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入要查询的类别名称 可以模糊查询");
@@ -72,7 +73,7 @@ public class CategoryFunction {
     /**
      * 删除方法
      */
-    private void deleteCategory() {
+    private static void deleteCategory() {
         CategoryDaoimpl categoryDaoimpl = new CategoryDaoimpl();
         System.out.println("请输入要删除的类别id");
         Scanner sc = new Scanner(System.in);
@@ -93,7 +94,7 @@ public class CategoryFunction {
     /**
      * 修改方法
      */
-    private void updateCategory() {
+    private static void updateCategory() {
         CategoryDaoimpl categoryDaoimpl = new CategoryDaoimpl();
         System.out.println("请输入要修改的类别id");
         Scanner sc = new Scanner(System.in);
@@ -117,7 +118,7 @@ public class CategoryFunction {
     /**
      * 添加方法
      */
-    private void addCategory() {
+    private static void addCategory() {
         CategoryDaoimpl categoryDaoimpl = new CategoryDaoimpl();
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入要添加的类别id");

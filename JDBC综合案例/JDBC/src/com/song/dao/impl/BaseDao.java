@@ -5,7 +5,8 @@ import java.sql.*;
 
 public class BaseDao {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://1.94.15.19:8083/shopdb?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false&all";
+    //编码utf-8
+    private static final String URL = "jdbc:mysql://1.94.15.19:8083/shopdb?useUnicode=true&characterEncoding=utf8";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "3100880856";
 
@@ -15,9 +16,9 @@ public class BaseDao {
 
     protected ResultSet rs;
 
-/**
- * 连接数据库
- */
+    /**
+     * 连接数据库
+     */
     public void getConnection() {
         try {
             Class.forName(DRIVER);
@@ -28,10 +29,11 @@ public class BaseDao {
             throw new RuntimeException(e);
         }
     }
+
     /**
      * 释放资源
      */
-    public void  connClose(){
+    public void connClose() {
         try {
             if (rs != null) {
                 rs.close();
@@ -43,13 +45,14 @@ public class BaseDao {
             if (conn != null) {
                 conn.close();
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
     /**
      * 通用的增删改
+     *
      * @param sql
      * @param params
      */
@@ -75,6 +78,7 @@ public class BaseDao {
 
     /**
      * 通用的查询
+     *
      * @param sql
      * @param params
      */
@@ -93,9 +97,10 @@ public class BaseDao {
         }
         return rs;
     }
-    
+
     /**
      * 通用的查询
+     *
      * @param sql
      */
     public ResultSet executeQuery(String sql) {
