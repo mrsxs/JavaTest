@@ -80,6 +80,8 @@ public class CategoryDaoimpl extends BaseDao implements CategoryDao {
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return list;
     }
@@ -103,6 +105,8 @@ public class CategoryDaoimpl extends BaseDao implements CategoryDao {
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return list;
     }
@@ -123,6 +127,8 @@ public class CategoryDaoimpl extends BaseDao implements CategoryDao {
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return flag;
     }
@@ -147,6 +153,8 @@ public class CategoryDaoimpl extends BaseDao implements CategoryDao {
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return category;
     }

@@ -149,6 +149,8 @@ public class SalesDaoimpl extends BaseDao implements SalesDao {
             next(list);
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return list;
     }

@@ -113,6 +113,8 @@ public class GoodsDaoimpl extends BaseDao implements GoodsDao {
 
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return list;
     }
@@ -144,6 +146,8 @@ public class GoodsDaoimpl extends BaseDao implements GoodsDao {
             next(list, sql);
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return list;
     }
@@ -167,6 +171,8 @@ public class GoodsDaoimpl extends BaseDao implements GoodsDao {
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return flag;
     }
@@ -196,6 +202,8 @@ public class GoodsDaoimpl extends BaseDao implements GoodsDao {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return goods;
     }

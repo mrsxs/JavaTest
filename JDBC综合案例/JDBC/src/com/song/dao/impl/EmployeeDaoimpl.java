@@ -141,6 +141,8 @@ public class EmployeeDaoimpl extends BaseDao implements EmployeeDao {
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
 
         return list;
@@ -182,6 +184,8 @@ public class EmployeeDaoimpl extends BaseDao implements EmployeeDao {
             next(list, rs);
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
 
         return list;
@@ -206,10 +210,17 @@ public class EmployeeDaoimpl extends BaseDao implements EmployeeDao {
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return flag;
     }
 
+    /**
+     *  根据id查询职员信息
+     * @param id
+     * @return
+     */
     @Override
     public Employee selectEmployeeById(int id) {
         Employee employee = new Employee();
@@ -226,6 +237,8 @@ public class EmployeeDaoimpl extends BaseDao implements EmployeeDao {
                 employee.setHireLong(resultSet.getString("HireLong"));
                 employee.setSalary(resultSet.getDouble("Salary"));
 
+            }finally {
+                super.connClose();
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

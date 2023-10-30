@@ -112,6 +112,8 @@ public class OffersDaoimpl extends BaseDao implements OffersDao {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return list;
     }
@@ -136,6 +138,8 @@ public class OffersDaoimpl extends BaseDao implements OffersDao {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return flag;
     }
@@ -161,6 +165,8 @@ public class OffersDaoimpl extends BaseDao implements OffersDao {
                 offers.setAddress(resultSet.getString("Address"));
                 offers.setTel(resultSet.getString("Tel"));
                 list.add(offers);
+            }finally {
+                super.connClose();
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -192,6 +198,8 @@ public class OffersDaoimpl extends BaseDao implements OffersDao {
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }finally {
+            super.connClose();
         }
         return offers;
     }
