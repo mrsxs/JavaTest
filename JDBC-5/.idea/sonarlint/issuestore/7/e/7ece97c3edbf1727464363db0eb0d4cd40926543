@@ -1,0 +1,11 @@
+
+r	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¦·ıÿÿÿÿ8ê–ğ±¸1
+r	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¦·ıÿÿÿÿ8ê–ğ±¸1
+r	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¦·ıÿÿÿÿ8ê–ğ±¸1
+r	java:S117A"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïİÔ¤øÿÿÿÿ8ê–ğ±¸1
+r	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„¸®¼ùÿÿÿÿ8ê–ğ±¸1
+m	java:S117w"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚İÏá8ë–ğ±¸1
+s	java:S116"RRename this field "MovieId" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇÉŒûÿÿÿÿ8÷–ğ±¸1
+o	java:S116"TRename this field "MovieName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£ü¥|8ø–ğ±¸1
+m	java:S116"QRename this field "TypeId" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ößô»8ø–ğ±¸1
+c	java:S107%"BConstructor has 10 parameters, which is greater than 7 authorized.(Æ¦·ıÿÿÿÿ8ü–ğ±¸1
