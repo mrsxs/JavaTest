@@ -228,6 +228,25 @@ public class GoodsFunction {
             System.out.println("请输入新的商品库存");
             stockes = sc.nextInt();
         }
+        getCount(goodsName, price, categoryId, offerId, stockes, categoryDaoimpl, goodsId, goodsDaoimpl);
+        sc.close();
+
+    }
+
+    /**
+     * 修改商品信息的方法
+     * 
+     * @param goodsName       商品名称
+     * @param price           商品价格
+     * @param categoryId      商品类别id
+     * @param offerId         供货商id
+     * @param stockes         商品库存
+     * @param categoryDaoimpl 类别接口实现类
+     * @param goodsId         商品id
+     * @param goodsDaoimpl    商品接口实现类
+     */
+    private static void getCount(String goodsName, double price, int categoryId, int offerId, int stockes,
+            CategoryDaoimpl categoryDaoimpl, int goodsId, GoodsDaoimpl goodsDaoimpl) {
         Goods goods = new Goods();
         goods.setGoodsId(goodsId);
         goods.setGoodsName(goodsName);
@@ -241,8 +260,6 @@ public class GoodsFunction {
         } else {
             System.out.println("修改失败");
         }
-        sc.close();
-
     }
 
     /**
